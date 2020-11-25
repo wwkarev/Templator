@@ -28,6 +28,10 @@ final class FileTemplator extends StringTemplator {
         return templator
     }
 
+    static FileTemplator getInstance(String templateFileName) {
+        return FileTemplator.getInstance(new File(templateFileName))
+    }
+
     @Override
     String render() {
         return insertParams(joinParts())
